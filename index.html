@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Free 7.0.1 -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Main Style File -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Daily Tasks - To Do List</title>
+</head>
+
+<body>
+<!-- All In Center -->
+<div class="container">
+<!-- Start Header -->
+    <div class="header">
+        <h1>Daily Tasks</h1>
+        <div class="date-info">
+            <i class="fa-regular fa-clock"></i>
+            <div>
+                <span class="date"></span>
+                <span class="time"></span>
+            </div>
+        </div>
+    </div>
+<!-- Ens Header -->
+<!-- Start Input Text -->
+    <div class="input-group">
+        <input class="add-input" type="text" placeholder="Add a new task...">
+        <button class="btn-add">Add</button>
+    </div>
+<!-- End Input Text -->
+<!-- Start Tasks Grid -->
+    <div class="tasks-grid">
+        <!-- To Do Tasks -->
+        <div class="col to-do">
+            <h2><i class="fa-solid fa-list-check"></i> TO DO</h2>
+            <ul class="task-list">
+                <!-- Js will create the tasks here -->
+            </ul>
+        </div> 
+        <!-- completed Tasks -->
+        <div class="col completed">
+            <h2><i class="fa-solid fa-trophy"></i> COMPLETED</h2>
+            <ul class="task-list task-completed">
+                <!-- Js will create the tasks here -->
+            </ul>
+            <button class="clear-btn">
+                <i class="fa-solid fa-circle-xmark"></i> Clear Completed
+            </button>
+        </div>
+    </div>
+<!-- End Tasks Grid -->
+</div>
+<!-- main js File -->
+<script src="js/script.js"></script>
+</body>
+</html>
