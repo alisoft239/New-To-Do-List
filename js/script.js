@@ -193,26 +193,26 @@ function showEditError(parent, message) {
     }, 2600);
 }
 // show success toast (temporary) when a new task is added
-// function showSuccessToast(message) {
-//     const container = document.querySelector('.container') || document.body;
-//     const existing = container.querySelector('.toast-success');
-//     if (existing) existing.remove();
+function showSuccessToast(message) {
+    const container = document.querySelector('.container') || document.body;
+    const existing = container.querySelector('.toast-success');
+    if (existing) existing.remove();
 
-//     const toast = document.createElement('div');
-//     toast.className = 'toast-success';
-//     toast.setAttribute('role','status');
-//     toast.innerHTML = `<i class="fa-solid fa-circle-check"></i><span>${message}</span>`;
-//     container.appendChild(toast);
-//     requestAnimationFrame(() => toast.classList.add('visible'));
-//     setTimeout(() => {
-//         toast.classList.remove('visible');
-//         setTimeout(() => toast.remove(), 320);
-//     }, 2200);
-//     toast.addEventListener('click', () => {
-//         toast.classList.remove('visible');
-//         setTimeout(() => toast.remove(), 160);
-//     });
-// }
+    const toast = document.createElement('div');
+    toast.className = 'toast-success';
+    toast.setAttribute('role','status');
+    toast.innerHTML = `<i class="fa-solid fa-circle-check"></i><span>${message}</span>`;
+    container.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('visible'));
+    setTimeout(() => {
+        toast.classList.remove('visible');
+        setTimeout(() => toast.remove(), 320);
+    }, 2200);
+    toast.addEventListener('click', () => {
+        toast.classList.remove('visible');
+        setTimeout(() => toast.remove(), 160);
+    });
+}
 
 function editOldTask(newText,id) {
     let Tasks = JSON.parse(localStorage.getItem("Tasks")) || {};
@@ -272,7 +272,4 @@ let Tasks = JSON.parse(localStorage.getItem("Tasks"));
 Tasks[id].completed = true
 localStorage.setItem("Tasks",JSON.stringify(Tasks));
 createCompleted(Tasks[id].tittle, id)
-
 }
-
-
