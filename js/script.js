@@ -222,7 +222,6 @@ function editOldTask(newText,id) {
 // Loop for all old tasks and send to creattask function 
 function addOldTasks(){
     let Tasks = JSON.parse(localStorage.getItem("Tasks"));
-    Tasks.tittle
     for (const key in Tasks) {
         if (!Object.hasOwn(Tasks, key)) continue;
         const element = Tasks[key];
@@ -273,4 +272,5 @@ let Tasks = JSON.parse(localStorage.getItem("Tasks"));
 Tasks[id].completed = true
 localStorage.setItem("Tasks",JSON.stringify(Tasks));
 createCompleted(Tasks[id].tittle, id)
+
 }
