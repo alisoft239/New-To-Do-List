@@ -57,7 +57,7 @@ function addTask() {
     // Sent To Create Task Function
     creatTask(AllTasks[id].tittle, id );
     // show success toast
-    // showSuccessToast("Task created successfully");
+    showSuccessToast("Task created successfully");
     addInput.value = "";
 }
 function creatTask (taskText, id) {
@@ -274,3 +274,4 @@ localStorage.setItem("Tasks",JSON.stringify(Tasks));
 createCompleted(Tasks[id].tittle, id)
 
 }
+
