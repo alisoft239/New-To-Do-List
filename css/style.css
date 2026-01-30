@@ -67,9 +67,28 @@ body {
   justify-content: space-between;
   margin: 40px;
 }
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 .header h1 {
   text-transform: uppercase;
   color: var(--text-main);
+}
+.lang-toggle {
+  background: var(--primary-blue);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.15s;
+}
+.lang-toggle:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
 }
 .header .date-info {
   display: flex;
@@ -138,7 +157,7 @@ body {
   color: white;
   border: none;
   padding: 15px 25px;
-  margin-left: 10px;
+  margin: 0 10px;
   border-radius: 15px;
   cursor: pointer;
   font-weight: 600;
@@ -153,13 +172,12 @@ body {
     margin: 20px;
   }
   .input-group input {
-    padding: 10px 0;
-    padding-left: 10px;
+    padding: 10px 10px;
   }
   .input-group .btn-add {
     padding: 10px;
     border-radius: 50px;
-    margin-left: 5px;
+    margin-inline-start: 5px;
   }
 }
 /* End Input */
@@ -340,6 +358,53 @@ body {
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
+} /* Empty completed state */
+.completed-empty {
+  display: none; /* shown when no completed tasks */
+  margin-top:90px;
+  text-align: center;
+  color: var(--text-muted);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.completed-empty p {
+  margin-top: 6px;
+  font-size: 15px;
+}
+/* To-do empty state */
+.todo-empty {
+  display: none; /* shown when no to-do tasks */
+  margin-top: 90px;
+  text-align: center;
+  color: var(--text-muted);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.todo-empty p {
+  margin: 0;
+  font-size: 15px;
+}
+@media (max-width: 768px) {
+  .todo-empty {
+    padding: 10px;
+    margin-top: 45px ;
+    margin-bottom: 45px ;
+  }
+   .completed-empty {
+    padding: 12px;
+  }
+}
+/* RTL adjustments */
+[dir="rtl"] .completed-empty {
+  direction: rtl;
+}
+[dir="rtl"] .completed .clear-btn {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
 }
 @media (max-width: 768px) {
   .tasks-grid {
