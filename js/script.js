@@ -56,9 +56,9 @@ function addTask() {
     let AllTasks = JSON.parse(localStorage.getItem("Tasks"));
     // Sent To Create Task Function
     creatTask(AllTasks[id].tittle, id );
+    addInput.value = "";
     // show success toast
     showSuccessToast("Task created successfully");
-    addInput.value = "";
 }
 function creatTask (taskText, id) {
     // li Item llist
@@ -274,4 +274,5 @@ localStorage.setItem("Tasks",JSON.stringify(Tasks));
 createCompleted(Tasks[id].tittle, id)
 
 }
+
 
